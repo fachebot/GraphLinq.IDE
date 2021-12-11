@@ -142,6 +142,10 @@ class App {
             this.exportGraphCompressed();
         });
 
+        document.querySelector("[data-app-menu='file.exportJSON']").addEventListener("click", () => {
+            this.exportGraph();
+        });
+
         document.querySelector("[data-app-menu='file.load']").addEventListener("click", () => {
             this.requestLoadGraphFromFile();
         });
@@ -270,7 +274,7 @@ class App {
 
     exportGraph() {
         const json = this.exportGraphAsJSON();
-        saveAs(new File([JSON.stringify(json)], this.graphboard.name + ".glq", { type: "text/plain;charset=utf-8" }))
+        saveAs(new File([JSON.stringify(json)], this.graphboard.name + ".json", { type: "application/json;charset=utf-8" }))
         this.terminal.append("success", "Graph downloaded");
     }
 

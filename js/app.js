@@ -84,7 +84,7 @@ class App {
         let project = this.projectManager.projects.find(x => x.id == id);
         await this.loadGraphFromJSON(localStorage.getItem('graph/' + id));
         this.currentProject = project;
-        document.title = this.currentProject.name + " - GraphLinq IDE";
+        document.title = this.currentProject.name + " - BlockC0de  IDE";
     }
 
     async migrateToProject() {
@@ -108,7 +108,7 @@ class App {
             this.currentProject = await this.projectManager.createNewProject({
                 name: this.graphboard.name
             })
-            window.history.pushState('', 'GraphLinq IDE', window.location.protocol + "//" + window.location.host);
+            window.history.pushState('', 'BlockC0de  IDE', window.location.protocol + "//" + window.location.host);
         }
 
         return result.success;

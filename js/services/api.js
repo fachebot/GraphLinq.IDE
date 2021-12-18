@@ -1,5 +1,5 @@
 const engineBaseUrl = "http://localhost:1337";
-const apiBaseUrl = "https://api.graphlinq.io";
+const apiBaseUrl = "http://localhost:8888";
 
 const engineBasedAPI = false;
 

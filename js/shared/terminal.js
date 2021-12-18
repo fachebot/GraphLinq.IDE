@@ -6,7 +6,7 @@ export default class Terminal {
         this.app = app;
         this.container = document.querySelector("#console");
         this.flush();
-        this.append("debug", "Welcome to GraphLinq IDE v" + Version);
+        this.append("debug", "Welcome to BlockC0de  IDE v" + Version);
     }
 
     flush() {

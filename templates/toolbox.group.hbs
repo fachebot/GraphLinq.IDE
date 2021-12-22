@@ -1,5 +1,14 @@
 <div class="group-item">
     <div class="group-title">
+        {{#ifEquals groupName "Array"}}
+        <i class="fas fa-cube"></i>
+        {{/ifEquals}}
+        {{#ifEquals groupName "Function"}}
+        <i class="fas fa-code"></i>
+        {{/ifEquals}}
+        {{#ifEquals groupName "Web3.Util"}}
+        <i class="fas fa-wrench"></i>
+        {{/ifEquals}}
         {{#ifEquals groupName "Blockchain.Ethereum"}}
         <i class="fab fa-ethereum"></i>
         {{/ifEquals}}

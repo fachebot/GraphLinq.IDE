@@ -36,13 +36,14 @@ export default class Toolbox {
         const template = await fetchHandlebarTemplate(templateUrl);
         for(const i of this.groups) {
             let items = this.schema.filter(x => x.NodeGroupName == i);
-            let itemsWithoutIDEParameters = items.filter(x => x.IDEParameters == null);
-            let itemsVisibleIDEParameters = items.filter(x => x.IDEParameters != null && !x.IDEParameters.Hidden);
+            // let itemsWithoutIDEParameters = items.filter(x => x.IDEParameters == null);
+            // let itemsVisibleIDEParameters = items.filter(x => x.IDEParameters != null && !x.IDEParameters.Hidden);
             
-            const content = template({
-                groupName: i,
-                items: ReleaseMode == "dev" ? items : [...itemsWithoutIDEParameters, ...itemsVisibleIDEParameters]
-            });
+            // const content = template({
+            //     groupName: i,
+            //     items: ReleaseMode == "dev" ? items : [...itemsWithoutIDEParameters, ...itemsVisibleIDEParameters]
+            // });
+            const content = template({ groupName: i, items });
             const element = document.createElement("div");
             element.innerHTML = content;
             this.container.querySelector(".group-container").appendChild(element);

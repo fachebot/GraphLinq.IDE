@@ -257,6 +257,7 @@ export default class GraphBoard {
                 return node.schema.NodeGroupName == schema.NodeGroupName && node.schema.NodeType == schema.NodeType;
             });
             if (nodes.length >= schema.BlockLimitPerGraph) {
+                toastr.error("Block limit per graph");
                 return null;
             }
         }

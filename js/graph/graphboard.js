@@ -252,6 +252,15 @@ export default class GraphBoard {
     }
 
     async appendNewNodeWithSchema(schema, options = {}) {
+        if (schema.BlockLimitPerGraph > 0) {
+            var nodes = this.nodes.filter(function(node) {
+                return node.schema.NodeGroupName == schema.NodeGroupName && node.schema.NodeType == schema.NodeType;
+            });
+            if (nodes.length >= schema.BlockLimitPerGraph) {
+                return null;
+            }
+        }
+
         const node = new Node(this, schema, options);
         await node.initialize();
         this.nodes.push(node);

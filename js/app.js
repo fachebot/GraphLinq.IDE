@@ -313,7 +313,7 @@ class App {
 
         for (const node of graph.nodes) {
             const schema = this.toolbox.schema.filter(x => x.NodeType == node.type)[0];
-            if(!schema) {
+            if (!schema) {
                 continue;
             }
             const graphnode = await this.graphboard.appendNewNodeWithSchema(schema, {
@@ -321,6 +321,9 @@ class App {
                 x: node._x,
                 y: node._y
             });
+            if (!graphnode) {
+                continue;
+            }
             for (const p of node.out_parameters) {
                 const nodeParameter = graphnode.parameters.filter(x => x.schema.Name == p.name)[0];
                 if (nodeParameter == null) continue;

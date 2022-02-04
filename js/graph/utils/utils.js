@@ -54,23 +54,20 @@ export const addHandlebarsHelpers = () => {
     });
 
     Handlebars.registerHelper('isSecretInput', function (arg1, options) {
-        if(arg1 == null) return options.inverse(this);
+        if (arg1 == null) return options.inverse(this);
         return arg1.IsSecretInput ? options.fn(this) : options.inverse(this);
     });
 
     Handlebars.registerHelper('isScriptInput', function (arg1, options) {
-        if(arg1 == null) return options.inverse(this);
+        if (arg1 == null) return options.inverse(this);
         return arg1.IsScriptInput ? options.fn(this) : options.inverse(this);
     });
 }
 
 export const isParameterIsEditable = (type) => {
     const baseType = type.split(",")[0].trim();
-    if (baseType == "System.String" ||
-    baseType == "System.Decimal" ||
-    baseType == "System.Double" ||
-        baseType == "System.Int32" ||
-        baseType == "System.Int64" ||
+    if (baseType == "Decimal" ||
+        baseType == "System.String" ||
         baseType == "System.Boolean") {
         return true;
     }

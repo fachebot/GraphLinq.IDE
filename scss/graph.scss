@@ -235,27 +235,21 @@
                             }
                         }
 
-                        &.system-int32 {
+                        &.mapping {
                             .dot {
-                                background-color: $parameter-type-int32-color;
+                                background-color: $parameter-type-mapping-color;
                             }
                         }
 
-                        &.system-int64 {
+                        &.list {
                             .dot {
-                                background-color: $parameter-type-int64-color;
+                                background-color: $parameter-type-list-color;
                             }
                         }
 
-                        &.system-uint64 {
+                        &.decimal {
                             .dot {
-                                background-color: $parameter-type-int64-color;
-                            }
-                        }
-
-                        &.system-double {
-                            .dot {
-                                background-color: $parameter-type-double-color;
+                                background-color: $parameter-type-decimal-color;
                             }
                         }
 
